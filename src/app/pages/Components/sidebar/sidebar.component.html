@@ -1,0 +1,17 @@
+<div class="sidenav-header">
+    <img src="image/pic.jpg" alt="Avtar" [height]="profilePicSize()" [width]="profilePicSize()">
+    <div class="header-text" [class.hide-header-text]="sidenavCollapsed()">
+        <h5>Rudra Patrika</h5>
+        <p>Bishnu Behera</p>
+    </div>
+</div>
+<mat-nav-list>
+    @for (item of menuItem(); track item) {
+    <a mat-list-item [routerLink]="item.route" routerLinkActive #rla="routerLinkActive" [activated]="rla.isActive">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        @if(!sidenavCollapsed()){
+        <span matListItemTitle> {{ item.label }}</span>
+        }
+    </a>
+    }
+</mat-nav-list>
