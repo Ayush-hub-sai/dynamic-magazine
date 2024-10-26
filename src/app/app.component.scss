@@ -17,3 +17,7 @@ mat-sidenav-container {
 ::ng-deep .mat-drawer-inner-container{
     overflow: hidden !important;
 }
+
+mat-sidenav, mat-sidenav-content{
+    transition: all 500ms ease-in-out;
+}
